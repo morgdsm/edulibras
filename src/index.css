@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #7c3aed;
+  --color-primary-dark: #5b21b6;
+  --color-secondary: #f59e0b;
+  --color-secondary-dark: #b45309;
+  --color-success: #22c55e;
+  --color-success-dark: #15803d;
+  --color-bg: #fff7ed;
+  --color-card: #ffffff;
+  --color-path-done: #22c55e;
+  --color-path-future: #e5e7eb;
+  --font-sans: "Nunito", system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  font-size: clamp(15px, 2.2vw, 18px);
+}
+
+html,
+body,
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: linear-gradient(180deg, #fff7ed 0%, #fde8ff 100%);
+}
+
+@utility animate-pulse-current {
+  animation: pulse-current 1.5s ease-in-out infinite;
+}
+
+@utility animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@utility animate-float-cloud {
+  animation: float-cloud 4s ease-in-out infinite;
+}
+
+@utility animate-check-pop {
+  animation: check-pop 0.4s ease-out;
+}
+
+@utility animate-page-in {
+  animation: page-in 0.3s ease-out;
+}
+
+@keyframes pulse-current {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--glow-color, rgba(124, 58, 237, 0.45));
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px transparent;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float-cloud {
+  0%,
+  100% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes check-pop {
+  0% {
+    transform: scale(0) rotate(-35deg);
+  }
+  60% {
+    transform: scale(1.2) rotate(8deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
